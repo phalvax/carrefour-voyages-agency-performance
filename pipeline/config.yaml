@@ -1,0 +1,110 @@
+paths:
+  data_raw: data_raw
+  outputs: outputs
+theme_weights:
+  performance: 0.35
+  clients: 0.25
+  satisfaction: 0.15
+  structure: 0.15
+  concurrence: 0.1
+columns:
+  agency_id:
+    - Agence_code
+    - Agence_Code
+    - Agence_Code_CIE
+  agency_name:
+    - Agence_nom
+    - Agence_Nom
+    - Magasin
+  store_id:
+    - Magasin_Code_2
+    - Magasin_Code_1
+  perf_CA_total:
+    - CA_Total
+  perf_nb_resa:
+    - Nombre_Resa_Total
+  # perf_CA_web:
+  #   - CA_Total_Web
+  cli_nb_actifs:
+    - Nombre_Clients_Actifs
+  cli_nb_fideles:
+    - Nombre_Clients_Fideles
+  cli_valeur_annuelle:
+    - Valeur_Client_Annuelle_Moyenne
+  satisfaction_nps:
+    - NPS
+  satisfaction_respondents:
+    - Nombre de répondants
+    - Nombre_repondants
+  recrut_evolution_nouveaux:
+    - Evolution Nombre de Nouveaux Clients
+  recrut_poids_CA_nouveaux:
+    - Poids CA des Nouveaux Clients 2025
+    - Poids CA des Nouveaux Clients 2024
+  struct_surface:
+    - Magasin_Surface
+  struct_format:
+    - Magasin_Format
+  struct_statut:
+    - stoIntDesc
+  struct_drive:
+    - Magasin_Drive
+  conc_distance_compet:
+    - Concurrent_Distance_vol_oiseau_km
+  tx_panier_moyen:
+    - Panier_Moyen_Global
+themes:
+  performance:
+    vars:
+    - perf_CA_total
+    - perf_nb_resa
+    # - perf_CA_web
+    weights:
+    - 0.7
+    - 0.3
+    # - 0.2
+  clients:
+    vars:
+    - cli_nb_actifs
+    - cli_nb_fideles
+    - cli_valeur_annuelle
+    - recrut_evolution_nouveaux
+    weights:
+    - 0.35
+    - 0.35
+    - 0.15
+    - 0.15
+  satisfaction:
+    vars:
+    - satisfaction_nps
+    weights:
+    - 1.0
+  structure:
+    vars:
+    - struct_surface
+    - struct_drive
+    weights:
+    - 0.8
+    - 0.2
+  concurrence:
+    vars:
+    - conc_distance_compet
+    - tx_panier_moyen
+    weights:
+    - -0.6
+    - 0.4
+files:
+  Attributs_Agences_Magasins: Attributs_Agences_Magasins.xlsx
+  Attributs_Magasins_Concurrents_LECLERC: Attributs_Magasins_Concurrents_LECLERC.xlsx
+  Synthese_BDD_Clients_Agences: Synthese_BDD_Clients_Agences.xlsx
+  Satisfaction_Clients_Agences_Trimestres: Satisfaction_Clients_Agences_Trimestres.xlsx
+  Recrutement_Agences_Mensuel: Recrutement_Agences_Mensuel.xlsx
+  Global_Perf_Agences_Mensuel: Global_Perf_Agences_Mensuel.xlsx
+  Details_Perf_Agences_Mensuel: Details_Perf_Agences_Mensuel.xlsx
+  Transactions_Magasins_Mensuelles: Transactions_Magasins_Mensuelles.xlsx
+  Profils_Clients_Magasins: Profils_Clients_Magasins.xlsx
+  Profils_Clients_Total_HYPER: Profils_Clients_Total_HYPER.xlsx
+report:
+  top_quantile: 0.9
+  flop_quantile: 0.1
+  tables_limit: 25
